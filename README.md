@@ -18,20 +18,27 @@ Em um terminal digite "javac Main.java", de enter, depois digite "java Main", de
 ### CheckList do Projeto
 
 O que você considerou como perda aceitável para o reuso de espaços vazios, isto é, quais são os critérios para a gestão dos espaços vazios?
+Caso o objeto novo seja menor ou igual o espaço ocupado pelo objeto antigo, aquele poderá ser reutilizado.
 
 O código do CRUD com arquivos de tipos genéricos está funcionando corretamente?
+Sim
 
 O CRUD tem um índice direto implementado com a tabela hash extensível?
+Não
 
 A operação de inclusão busca o espaço vazio mais adequado para o novo registro antes de acrescentá-lo ao fim do arquivo?
+A operação de inclusão busca o primeiro espaço adequado em ordem sequencial 
 
 A operação de alteração busca o espaço vazio mais adequado para o registro quando ele cresce de tamanho antes de 
-acrescentá-lo ao fim do arquivo?
+acrescentá-lo ao fim do arquivo? A operação de altteração busca o primeiro espaço adequado em ordem sequencial 
 
-As operações de alteração (quando for o caso) e de exclusão estão gerenciando os espaços vazios para que possam ser reaproveitados?
+As operações de alteração (quando for o caso) e de exclusão estão gerenciando os espaços vazios para que possam ser reaproveitados? Sim
 
 O trabalho está funcionando corretamente?
+Sim
 
 O trabalho está completo?
+Sim
 
 O trabalho é original e não a cópia de um trabalho de um colega?
+O trabalho não é copia de nenhum colega e foi feito baseado no código do professor responsavel
