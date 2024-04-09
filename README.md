@@ -41,4 +41,4 @@ O trabalho está completo?
 Sim
 
 O trabalho é original e não a cópia de um trabalho de um colega?
-O trabalho não é copia de nenhum colega e foi feito baseado no código do professor responsavel
+O trabalho não é copia de nenhum colega e foi feito baseado no código do professor responsavel  

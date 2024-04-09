@@ -30,6 +30,34 @@ public class Arquivo<T extends Registro> {
     byte[] ba = obj.toByteArray();//dados do objeto
     short tamObj = (short) ba.length;//tamanho do objeto
 
+    byte lapide; // byte que indica se lapide esta marcado
+    short tamTmp;// tamanho so espaco que vai ser reutilizado
+    long endMelhorLapide = arq.length(); // endereco da lapide mais adequada
+    short melhorTam = -1;
+    long endAtual;
+    arq.seek(TAM_CABECALHO);
+    while (arq.getFilePointer() < arq.length() ) {
+      endAtual = arq.getFilePointer();
+      lapide = arq.readByte();
+      tamTmp = arq.readShort();
+      ///System.out.println("lapide: "+lapide+ " tamTmp: "+tamTmp+ " tamObj: "+tamObj + " melhorTam: "+melhorTam);
+      if (lapide == ' ' || tamTmp < tamObj ) {
+          arq.seek(arq.getFilePointer() + tamTmp);
+      }
+      else if (melhorTam == -1 || tamTmp < melhorTam) {
+        melhorTam = tamTmp;
+        endMelhorLapide = endAtual;
+        arq.seek(arq.getFilePointer() + tamTmp );
+      }
+    }
+    System.out.println("teste");
+    arq.seek(endMelhorLapide);// endereco mais adequado para colocar o novo objeto
+    System.out.println("teste");
+    arq.write(' '); // lápide
+    arq.writeShort(melhorTam == -1?tamObj:melhorTam);// tamanho do objeto
+    arq.write(ba);//objeto
+
+/* * /
     long endLapide;
     long endObj;
     byte lapide;
@@ -39,7 +67,7 @@ public class Arquivo<T extends Registro> {
         endLapide = arq.getFilePointer();
         lapide = arq.readByte();
         tamTmp = arq.readShort();
-        endObj = arq.getFilePointer()+1;
+        endObj = arq.getFilePointer() + 1;
         if (lapide == ' ' || tamTmp > tamObj ) {
             arq.seek(endObj+ tamTmp);
         }
@@ -57,7 +85,7 @@ public class Arquivo<T extends Registro> {
         arq.writeShort(tamObj);
         arq.write(ba);
     }
-
+/* */
     return obj.getID();
   }
 
