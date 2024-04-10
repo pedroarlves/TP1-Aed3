@@ -17,7 +17,7 @@ Em um terminal digite "javac Main.java", de enter, depois digite "java Main", de
 
 ### CheckList do Projeto
 
-#### O que você considerou como perda aceitável para o reuso de espaços vazios, isto é, quais são os critérios para a gestão dos espaços vazios?
+* #### O que você considerou como perda aceitável para o reuso de espaços vazios, isto é, quais são os critérios para a gestão dos espaços vazios?
 Caso o objeto novo seja menor ou igual o espaço ocupado pelo objeto antigo, aquele poderá ser reutilizado.
 
 * #### O código do CRUD com arquivos de tipos genéricos está funcionando corretamente?
