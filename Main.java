@@ -12,7 +12,8 @@ class Main {
     Violao l2 = new Violao( "Tagima", "Dalas", 3);
     Violao p = new Violao();
     Violao l3 = new Violao("Gibson", "Fly", 2 );
-    int id1, id2, id3;
+    Violao l4 = new Violao("Tagima", "Kansas Mahogany", 5 );
+    int id1, id2, id3, id4;
 
     try {
       arqVioloes = new Arquivo<>("dados/violoes.db", Violao.class.getConstructor());// criando arquivo que armazenara os dados
@@ -31,7 +32,15 @@ class Main {
       id3 = arqVioloes.create(l3); // criando terceiro obj
       System.out.println("Violao criado com o ID: " + id3);
 
-      l1.setModelo("Kansas");
+      id4 = arqVioloes.create(l4); // criando quarto obj
+      System.out.println("Violao criado com o ID: " + id4);
+
+      if (arqVioloes.delete(id4)) // excluindo quarto obj
+        System.out.println("Violao de ID " + id4 + " excluido!");
+      else
+        System.out.println("Violao de ID " + id4 + " não encontrado!");
+
+      l1.setModelo("Kansas Folk");
       if (arqVioloes.update(l1))// fazendo update do primeiro
         System.out.println("Violao de ID " + l1.getID() + " alterado!");
       else

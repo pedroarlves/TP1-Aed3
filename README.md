@@ -27,10 +27,10 @@ O CRUD tem um índice direto implementado com a tabela hash extensível?
 Não
 
 A operação de inclusão busca o espaço vazio mais adequado para o novo registro antes de acrescentá-lo ao fim do arquivo?
-A operação de inclusão busca o primeiro espaço adequado em ordem sequencial 
+SIm
 
 A operação de alteração busca o espaço vazio mais adequado para o registro quando ele cresce de tamanho antes de 
-acrescentá-lo ao fim do arquivo? A operação de altteração busca o primeiro espaço adequado em ordem sequencial 
+acrescentá-lo ao fim do arquivo? Sim
 
 As operações de alteração (quando for o caso) e de exclusão estão gerenciando os espaços vazios para que possam ser reaproveitados? Sim
 
